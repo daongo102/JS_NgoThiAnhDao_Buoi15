@@ -1,0 +1,130 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+</head>
+
+<body>
+
+    <!-- !BÀI TẬP 1 -->
+    <div class="container py-5">
+        <div class="w-75">
+            <h3>QUẢN LÝ TUYỂN SINH</h3>
+            <label class="mb-1">Điểm chuẩn</label>
+            <input type="number" class="form-control mb-3" id="diemChuan">
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-7">
+                        <label class="mb-1">Không thuộc khu vực ưu tiên (đánh dấu X)</label>
+                        <input type="text" id="khongUTKhuVuc" style="width: 30px;">
+                    </div>
+                    <div class="col-5">
+                        <label class="mb-1">Thuộc khu vực ưu tiên</label>
+                        <select class="form-control" id="uuTienKhuVuc">
+                            <option>--Chọn khu vực--</option>
+                            <option value="2">Khu Vực A</option>
+                            <option value="1">Khu Vực B</option>
+                            <option value="0.5">Khu Vực C</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+            <div class="form-group">
+                <div class="row">
+                    <div class="col-7">
+                        <label class="mb-1">Không thuộc đối tượng ưu tiên (đánh số 0)</label>
+                        <input type="text" id="khongUTDoiTuong" style="width: 30px;">
+                    </div>
+                    <div class="col-5">
+                        <label class="mb-1"> Thuộc đối tượng ưu tiên</label>
+                        <select class="form-control" id="uuTienDoiTuong">
+                            <option>--Chọn đối tượng--</option>
+                            <option value="2.5">Đối Tượng 1</option>
+                            <option value="1.5">Đối Tượng 2</option>
+                            <option value="1">Đối Tượng 3</option>
+                        </select>
+                    </div>
+                </div>
+            </div>           
+            <div class="row">
+                <div class="col-4">
+                    <label class="mb-1">Điểm môn thứ nhất</label>
+                    <input type="number" class="form-control" id="diemMon1" placeholder="Nhập điểm">
+                </div>
+                <div class="col-4">
+                    <label class="mb-1">Điểm môn thứ hai</label>
+                    <input type="number" class="form-control" id="diemMon2" placeholder="Nhập điểm">
+                </div>
+                <div class="col-4">
+                    <label class="mb-1">Điểm môn thứ ba</label>
+                    <input type="number" class="form-control" id="diemMon3" placeholder="Nhập điểm">
+                </div>
+
+            </div>
+            <div class="text-center mt-3">
+                <button class="btn btn-warning" id="btnKQTS">Kết quả</button>
+            </div>
+            </form>
+            <p class="my-3 alert alert-info" id="txtTuyenSinh"></p>
+        </div>
+    </div>
+
+    <!-- !BÀI TẬP 2 -->
+    <div class="container py-5">
+        <h3>TÍNH TIỀN ĐIỆN</h3>
+        <form class="w-50">
+            <label class="mb-1">Nhập họ và tên</label>
+            <input type="text" class="form-control mb-3" id="inputHoTen">
+            <label class="mb-1">Nhập số Kw</label>
+            <input type="number" class="form-control mb-3" id="inputKw">
+            <button type="button" onclick="mainBT2()" class="btn btn-primary">Tính tiền điện</button>
+        </form>
+        <p class="w-50 my-3 alert alert-info" id="txtTienDien"></p>
+    </div>
+
+    <!-- !BÀI TẬP 3 -->
+    <div class="container py-5">
+        <h3>TÍNH THUẾ THU NHẬP CÁ NHÂN</h3>
+        <form class="w-50">
+            <label class="mb-1">Nhập họ và tên</label>
+            <input type="text" class="form-control mb-3" id="hoTen">
+            <label class="mb-1">Tổng thu nhập cả năm</label>
+            <input type="number" class="form-control mb-3" id="tongThuNhap">
+            <label class="mb-1">Số người phụ thuộc</label>
+            <input type="number" class="form-control mb-3" id="ngươiPhuThuoc">
+            <button type="button" onclick="mainBT3()" class="btn btn-primary">Tính tiền thuế</button>
+        </form>
+        <p class="w-50 my-3 alert alert-info" id="txtTienThue"></p>
+    </div>
+
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+        crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+        crossorigin="anonymous"></script>
+
+    <!--=====================================================================================================-->
+
+    <script src="./js/BT1_QuanLyTuyenSinh.js"></script>
+    <script src="./js/BT2_TinhTienDien.js"></script>
+    <script src="./js/BT3_TinhThueTNCN.js"></script>
+    <script src="./js/BT4_TinhTienCap.js"></script>
+
+</body>
+
+</html>
