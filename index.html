@@ -9,7 +9,7 @@
 
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">    
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 
 <body>
@@ -19,13 +19,9 @@
         <div class="w-75">
             <h3>QUẢN LÝ TUYỂN SINH</h3>
             <label class="mb-1">Điểm chuẩn</label>
-            <input type="number" class="form-control mb-3" id="diemChuan">
+            <input type="number" class="form-control mb-3" id="diemChuanInp">
             <div class="form-group">
                 <div class="row">
-                    <div class="col-7">
-                        <label class="mb-1">Không thuộc khu vực ưu tiên (đánh dấu X)</label>
-                        <input type="text" id="khongUTKhuVuc" style="width: 30px;">
-                    </div>
                     <div class="col-5">
                         <label class="mb-1">Thuộc khu vực ưu tiên</label>
                         <select class="form-control" id="uuTienKhuVuc">
@@ -39,10 +35,6 @@
             </div>
             <div class="form-group">
                 <div class="row">
-                    <div class="col-7">
-                        <label class="mb-1">Không thuộc đối tượng ưu tiên (đánh số 0)</label>
-                        <input type="text" id="khongUTDoiTuong" style="width: 30px;">
-                    </div>
                     <div class="col-5">
                         <label class="mb-1"> Thuộc đối tượng ưu tiên</label>
                         <select class="form-control" id="uuTienDoiTuong">
@@ -53,7 +45,7 @@
                         </select>
                     </div>
                 </div>
-            </div>           
+            </div>
             <div class="row">
                 <div class="col-4">
                     <label class="mb-1">Điểm môn thứ nhất</label>
@@ -70,7 +62,7 @@
 
             </div>
             <div class="text-center mt-3">
-                <button class="btn btn-warning" id="btnKQTS">Kết quả</button>
+                <button onclick="mainBT1()" class="btn btn-warning" id="btnKQTS">Kết quả</button>
             </div>
             </form>
             <p class="my-3 alert alert-info" id="txtTuyenSinh"></p>
