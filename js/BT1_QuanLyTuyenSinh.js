@@ -8,10 +8,15 @@ function mainBT1() {
 
     var UTDT = Number(changeId("uuTienDoiTuong").value);
     var UTKV = Number(changeId("uuTienKhuVuc").value);
+    var khongUTKV = changeId('khongKVUT').value;
+    var khongUTDT = changeId('khongDTUT').value;
 
-    var diemUuTien = calcDiemUuTien(UTDT, UTKV);
 
-    var ketQuaTS = txtThongBao(diemUuTien, diemM1, diemM2, diemM3, diemChuan);
+    var typeDiemUT = checkTypeUT(khongUTDT, khongUTKV, UTDT, UTKV);
+
+    var diem_UuTien = calcDiemUuTien(typeDiemUT, UTDT, UTKV);
+
+    var ketQuaTS = txtThongBao(diem_UuTien, diemM1, diemM2, diemM3, diemChuan);
 
     document.getElementById('txtTuyenSinh').innerHTML = ketQuaTS;
 }
@@ -22,13 +27,41 @@ function changeId(id) {
 }
 
 
-function calcDiemUuTien(uuTien_DT, uuTien_KV) {
-    if (uuTien_KV > 0 && uuTien_DT > 0) {
-        return uuTien_DT + uuTien_KV;
-    } else if (uuTien_KV > 0) {
-        return uuTien_KV;
-    } else if (uuTien_DT > 0) {
+function checkTypeUT(k_UuTien_DT, k_UuTien_KV, uuTien_DT, uuTien_KV) {
+
+    if (k_UuTien_DT == "0" && (k_UuTien_KV == "X" || k_UuTien_KV == "x") && uuTien_DT == 0 && uuTien_KV == 0) {
+        return "Không thuộc ưu tiên";
+
+    } else if ((k_UuTien_KV == "X" || k_UuTien_KV == "x") && uuTien_DT > 0 && uuTien_KV == 0 && k_UuTien_DT == "") {
+        return "Thuộc ưu tiên đối tượng";
+
+    } else if (uuTien_KV > 0 && (k_UuTien_DT == "0") && uuTien_DT == 0 && k_UuTien_KV == "") {
+        return "Thuộc ưu tiên khu vực";
+
+    } else if (uuTien_KV > 0 && uuTien_DT > 0 && k_UuTien_DT == "" && k_UuTien_KV == "") {
+        return "Thuộc ưu tiên khu vực và đối tượng";
+
+    } else {
+        alert("Vui lòng kiểm tra mục điểm ưu tiên!")
+        return "";
+    }
+}
+
+
+function calcDiemUuTien(loaiUT, uuTien_DT, uuTien_KV) {
+
+    if (loaiUT == "Không thuộc ưu tiên") {
+        return 0;
+
+    } else if (loaiUT == "Thuộc ưu tiên đối tượng") {
         return uuTien_DT;
+
+    } else if (loaiUT == "Thuộc ưu tiên khu vực") {
+        return uuTien_KV;
+
+    } else if (loaiUT == "Thuộc ưu tiên khu vực và đối tượng") {
+        return uuTien_DT + uuTien_KV;
+        
     } else {
         return 0;
     }
