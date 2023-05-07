@@ -65,20 +65,6 @@ function checkTypeKH(phanLoai) {
 }
 
 
-// function calcTienCap(phi_hopdong, phi_dvcb, phi_dvcb_t11, ketNoi, kenh_cc, phi_thuekenh) {
-
-//     if ((0 < ketNoi && ketNoi <= 10) || kenh_cc > 0) {
-//         return phi_hopdong + phi_dvcb + (kenh_cc * phi_thuekenh);
-
-//     } else if (10 < ketNoi && kenh_cc > 0) {
-//         return phi_hopdong + phi_dvcb + (phi_dvcb_t11 * ketNoi) + (kenh_cc * phi_thuekenh);
-
-//     } else {
-//         alert('Vui lòng kiểm tra lại dữ liệu!')
-//         return 0;
-//     }
-// }
-
 function calcTienCap(phi_hopdong, phi_dvcb, phi_dvcb_t11, ketNoi, kenh_cc, phi_thuekenh) {
 
     if (kenh_cc >= 0 && ketNoi == 0) {
