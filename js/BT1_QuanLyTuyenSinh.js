@@ -1,3 +1,4 @@
+//! BÀI 1: QUẢN LÝ TUYỂN SINH
 
 function mainBT1() {
     var diemChuan = Number(changeId("diemChuanInp").value);
@@ -10,14 +11,16 @@ function mainBT1() {
 
     var diemUuTien = calcDiemUuTien(UTDT, UTKV);
 
-    var ketQuaTS = txtThongBao(diemUuTien, diemM1, diemM2, diemM3, diemChuan);   
+    var ketQuaTS = txtThongBao(diemUuTien, diemM1, diemM2, diemM3, diemChuan);
 
     document.getElementById('txtTuyenSinh').innerHTML = ketQuaTS;
 }
 
+
 function changeId(id) {
     return document.getElementById(id);
 }
+
 
 function calcDiemUuTien(uuTien_DT, uuTien_KV) {
     if (uuTien_KV > 0 && uuTien_DT > 0) {
@@ -31,6 +34,7 @@ function calcDiemUuTien(uuTien_DT, uuTien_KV) {
     }
 }
 
+
 function txtThongBao(diem_UuTien, diemMonT1, diemMonT2, diemMonT3, diem_chuan) {
 
     var tongDiem = diem_UuTien + diemMonT1 + diemMonT2 + diemMonT3;
@@ -41,10 +45,10 @@ function txtThongBao(diem_UuTien, diemMonT1, diemMonT2, diemMonT3, diem_chuan) {
     } else if ((0 < diemMonT1 && diemMonT1 <= 10) && (0 < diemMonT2 && diemMonT2 <= 10) && (0 < diemMonT3 && diemMonT3 <= 10) && tongDiem >= diem_chuan) {
         return "Bạn đã đậu. Tổng điểm: " + tongDiem;
 
-    } else if ((0 < diemMonT1 && diemMonT1 <= 10) && (0 < diemMonT2 && diemMonT2 <= 10) && (0 < diemMonT3 && diemMonT3 <= 10) && tongDiem < diem_chuan){
-        return "Bạn đã rớt. Tổng điểm: " + tongDiem;  
+    } else if ((0 < diemMonT1 && diemMonT1 <= 10) && (0 < diemMonT2 && diemMonT2 <= 10) && (0 < diemMonT3 && diemMonT3 <= 10) && tongDiem < diem_chuan) {
+        return "Bạn đã rớt. Tổng điểm: " + tongDiem;
 
-    }else{
+    } else {
         alert("Vui lòng check lại điểm!")
         return 0;
     }

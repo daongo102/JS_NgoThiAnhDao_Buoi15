@@ -97,6 +97,41 @@
         <p class="w-50 my-3 alert alert-info" id="txtTienThue"></p>
     </div>
 
+    <!-- !BÀI TẬP 4 -->
+    <div class="container py-5">
+        <div class="w-75">
+            <h3>TÍNH TIỀN CÁP</h3>
+            <div class="row">
+                <div class="col-4">
+                    <label class="mb-1">Chọn loại khách hàng</label>
+                    <select class="form-control" onchange="clickKH()" id="chonKH" >
+                        <option>Chọn loại khách hàng</option>
+                        <option value="Nhà Dân">Nhà Dân</option>
+                        <option value="Doanh Nghiệp">Doanh Nghiệp</option>
+                    </select>
+                </div>
+                <div class="col-4">
+                    <label class="mb-1">Nhập mã khách hàng</label>
+                    <input type="text" class="form-control" id="maKH">
+                </div>
+                <div class="col-4">
+                    <label class="mb-1">Số kênh cao cấp</label>
+                    <input type="number" class="form-control" id="kenhCaoCap">
+                </div>
+                <div class="col-4 mt-2" id="tabKetNoi" style="visibility: hidden;">
+                    <label class="mb-1">Số kết nối</label>
+                    <input type="number" class="form-control" id="ketNoi">
+                </div>
+            </div>
+            <div class="mt-3">
+                <button onclick="mainBT4()" class="btn btn-success" id="btnTienCap">Tính Tiền Cáp</button>
+            </div>
+            </form>
+            <p class="my-3 alert alert-info" id="txtTienCap"></p>
+        </div>
+    </div>
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
