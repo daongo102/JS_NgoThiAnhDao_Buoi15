@@ -83,6 +83,6 @@ function txtThongBao(diem_UuTien, diemMonT1, diemMonT2, diemMonT3, diem_chuan) {
 
     } else {
         alert("Vui lòng check lại điểm!")
-        return 0;
+        return "";
     }
 }
